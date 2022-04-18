@@ -60,7 +60,7 @@ export function addBook(ctx) {
         const type = form.get('type')
 
 
-        if(title =="" || description =="" || imageUrl==""|| type=="") {
+        if([...form].some(x=>x[1]== "")) {
             return alert("All Fields are required!");
         }
         await createBook({
